@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    button {
+      padding: 7px;
+      background-color: aquamarine;
+      color: blue;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+    }
+
+    input {
+      width: 200px;
+      padding: 7px;
+      outline: none;
+    }
+
+    p{
+      Font-size:20px;
+    }
+
+
+  </style>
+
+
+</head>
+
+<body>
+  <input type="text" placeholder="Type something..." id="myInput">
+  <button type="button" onclick="CheckPeople(People);">Get Data</button>
+
+  <script>
+    let People = [
+
+      {
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb7OT3EHKektRQIp7BxmMDOTYiobU0dCt78w&usqp=CAU",
+        name: "Thomas",
+        designation: "CEO",
+        description: "'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.'"
+      },
+      {
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb7OT3EHKektRQIp7BxmMDOTYiobU0dCt78w&usqp=CAU" ,
+        name: "Ramish",
+        designation: "Dir",
+        description: "'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.'"
+      },
+      {
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb7OT3EHKektRQIp7BxmMDOTYiobU0dCt78w&usqp=CAU",
+        name: "Sidra",
+        designation: "Hr",
+        description: "'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.'"
+      },
+
+    ]
+    function getInputValue() {
+      // Selecting the input element and get its value 
+      var inputVal = document.getElementById("myInput").value;
+      
+      document.write(inputVal);
+      // Displaying the value
+    }
+
+
+
+    function CheckPeople(Employee) {
+
+
+
+
+      var a = document.getElementById("myInput").value;
+      document.getElementById("div1").style.border = "1px solid #0000FF";
+      document.getElementById("div1").style.width = "700px";
+      document.getElementById("div1").style.height = "200px";
+      document.getElementById("div1").style.padding = "40px";
+      document.getElementById("div1").style.marginTop= "10px";
+      var r = document.querySelector(':root');
+
+      if (Employee[0].name == a) {
+       var b ="Name :" + " " + Employee[0].name;
+      var c = "Designation :" + " " +  Employee[0].designation;
+        var d = "Description :" + " " +  Employee[0].description;
+       
+       var e = Employee[0].image; 
+     
+      document.getElementById('output').innerHTML =  b;
+      document.getElementById('output1').innerHTML = c;
+      document.getElementById('output2').innerHTML = d;
+      document.getElementById('output4').src = e;
+
+      }
+    else  if (Employee[1].name == a) {
+        var b =  "Name :" + " " +Employee[1].name;
+      var c =  "Designation :" + " " +   Employee[1].designation;
+        var d =  "Description :" + " " +    Employee[1].description;
+       var e = Employee[1].image;
+      document.getElementById('output').innerHTML =b;
+      document.getElementById('output1').innerHTML = c;
+      document.getElementById('output2').innerHTML = d;
+    
+      document.getElementById('output4').src = e;
+      }
+   else  if (Employee[2].name == a) {
+        var b =  "Name :" + " " +   Employee[2].name;
+      var c =  "Designation :" + " " +   Employee[2].designation;
+        var d =  "Description :" + " " +   Employee[2].description;
+       var e = Employee[2].image;
+      document.getElementById('output').innerHTML = b;
+      document.getElementById('output1').innerHTML = c;
+      document.getElementById('output2').innerHTML = d;
+    
+      document.getElementById('output4').src = e;
+      }
+     
+  else { document.write("Result not found");
+      }
+    }
+
+     CheckPeople(People);
+  </script>
+  <div id="div1">
+    <img   style="float:right;"  id="output4">
+    <p id="output"></p>
+    <p id="output1"></p>
+    <p id="output2"></p>
+    <p id="output3"></p>
+   
+   
+  </div>
+  
+ 
+  
+  
+
+</body>
+
+</html>
